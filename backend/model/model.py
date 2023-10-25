@@ -23,7 +23,7 @@ class SliderItem(BaseModel):
 
 # slider table
 class Slider(BaseModel):
-    id = PrimaryKeyField()
+    id = AutoField()
 
 
 # a junction table for achieving many-to-many relationships
