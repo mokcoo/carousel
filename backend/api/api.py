@@ -7,17 +7,12 @@ app = FastAPI()
 
 
 @app.post("/carousel/add/")
-async def create_carousel(carousel:SliderItemForm):
-    print(carousel)
+async def create_carousel(carousel:SliderForm):
     new_carousel= CarouselServicer()
-    if not new_carousel.create_carousel(carousel.id,
-                                 carousel.title,
-                                 carousel.description,
-                                 carousel.buttonText,
-                                 carousel.component,
-                                 carousel.link):
-        raise HTTPException(status_code=404,detail="item id not exist")
-    return new_carousel
+    id = new_carousel.create_carousel(carousel.data)
+
+
+    return {"message":id}
 
 @app.get("/")
 async def test_carousel():

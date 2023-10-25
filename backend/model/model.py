@@ -30,5 +30,5 @@ class SliderData(BaseModel):
 
 if __name__ == "__main__":
     db.connect()
-    # db.drop_tables([SliderImage, SliderItem, Slider, SliderData])
+    #db.drop_tables([SliderImage, SliderItem, Slider, SliderData])
     db.create_tables([SliderImage, SliderItem, Slider, SliderData])
