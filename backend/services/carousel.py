@@ -3,6 +3,30 @@ from setting.setting import db
 
 
 class CarouselServicer():
+    def delete_carousel(self,id):
+        slider = Slider.get_or_none(Slider.id == id)
+        if not slider:
+            return False
+        with db.atomic() as txn:
+            try:
+                datas = SliderData.select().where(SliderData.slider == id)
+                for data in datas:
+                    data.delete_instance()
+                    item = SliderItem.get_or_none(SliderItem.id == data.id)
+                    if item:
+                        image_id = item.backgroundImage_id
+                        item.delete_instance()
+
+                        image = SliderImage.get_or_none(SliderImage.id == image_id)
+                        if image:
+                            image.delete_instance()
+                slider.delete_instance()
+                return True
+            except Exception as e:
+                txn.rollback()
+                print(f"Error: {e}")
+                return False
+
     def get_carousel(self):
 
         slider_list = []
