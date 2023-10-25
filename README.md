@@ -1,5 +1,5 @@
 # carousel
-this is the ERD for the database
+this is the ERD for the database <br/>
 each table contains a primary key id
 SliderData is the junction table for Slider and SliderItem which contains two foreign key targeting Slider and SliderItem
 SliderItem contains a foreign key targeting the SliderImage table
