@@ -14,6 +14,8 @@ async def create_carousel(carousel:SliderForm):
 
     return {"message":id}
 
-@app.get("/")
-async def test_carousel():
-    return {"message":"hi, this is fast api"}
+@app.get("/carousel/list")
+async def get_carousel():
+    new_carousel = CarouselServicer()
+    res = new_carousel.get_carousel()
+    return {"message":res}
