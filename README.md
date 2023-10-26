@@ -14,7 +14,7 @@ setting folder: establishing connection to databse<br/><br/>
 if you want to run the project, first change the setting file's database's connection to your local database, then create a database called carousel.<br/>
 then use the cli:<br/>
 uvicorn main:app<br/><br/>
-this is the full view of my json after calling the /carousel/list api,the link in an image I stored the aliyun's oss
+this is the full view of my json after calling the /carousel/list api,the link is an image I stored the aliyun's oss
 ```json
 {
     "message": [
@@ -121,19 +121,19 @@ this is the full view of my json after calling the /carousel/list api,the link i
     ]
 }
 ```
-for the details of the api, I presume that the front end will send a list of SliderItem, which contains all the information and the links. So if this json is sent from the frontend, it will create the desired entries in the four tables
+for the details of the api, I presume that the front end will send a list of SliderItem, which contains all the information and the links. So if this json is sent from the frontend, it will create the desired entries in the four tables and return the id of that slider
 ```json
 {
     "data":[
         {
-            "title":"test15",
+            "title":"test14",
             "description":"my_image8",
             "buttonText":"selfImage8",
             "component":"testcomponent8",
             "link":"https://mxshop-files-mokcoo.oss-cn-beijing.aliyuncs.com/c35a0ddb3d3b6bb80f2be63ef42a260.jpg"
         },
         {
-            "title":"test15",
+            "title":"test14",
             "description":"my_image1",
             "buttonText":"selfImage1",
             "component":"testcomponent1",
@@ -142,7 +142,7 @@ for the details of the api, I presume that the front end will send a list of Sli
     ]
 }
 ```
-then if we want to update that those two SliderItems, we can first call the /carousel/list to check the id of this slider, then use that slider and the data which contains the updated information with this json
+then if we want to update that those two SliderItems, we can first call the /carousel/list to check the id of this slider, then use that slider's id along with the data which contains the updated information with this json,if success it will return the updated json. Like below.
 ```json
 {
     "data":[
@@ -165,3 +165,7 @@ then if we want to update that those two SliderItems, we can first call the /car
     ]
 }
 ```
+for the delete, we only need to provide the id of that slider and then it will go through all related fields and do the operations<br/>
+
+Based on the interface provided by aimerce, I changed the id of slider to optional as well as the SliderItem, so it can be used when using the update logic, but for the creation ones, we only the the list of data since peewee will automatically assign the id for use. <br/>
+Also, since each time when updating, deleting, and creating is called, it is associated with mutiple tables, so I used the transcations for data atomic.
