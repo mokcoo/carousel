@@ -15,7 +15,9 @@ if you want to run the project, first change the setting file's database's conne
 then use the cli:<br/>
 uvicorn main:app<br/><br/>
 
-for the details of the api, I presume that the front end will send a list of SliderItem, which contains all the information and the links. So if this json is sent from the frontend, I will create the information in the four tables{
+for the details of the api, I presume that the front end will send a list of SliderItem, which contains all the information and the links. So if this json is sent from the frontend, it will create the desired entries in the four tables
+```json
+{
     "data":[
         {
             "title":"test15",
@@ -34,3 +36,4 @@ for the details of the api, I presume that the front end will send a list of Sli
         }
     ]
 }
+```
