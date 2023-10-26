@@ -13,7 +13,7 @@ services folder: service function for api<br/>
 setting folder: establishing connection to databse<br/><br/>
 if you want to run the project, first change the setting file's database's connection to your local database, then create a database called carousel.<br/>
 then use the cli:<br/>
-```json
+```python
 uvicorn main:app
 ```
 this is the full view of my json after calling the /carousel/list api,the link is an image I stored the aliyun's oss
