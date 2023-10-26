@@ -27,7 +27,6 @@ for the details of the api, I presume that the front end will send a list of Sli
             "link":"https://mxshop-files-mokcoo.oss-cn-beijing.aliyuncs.com/c35a0ddb3d3b6bb80f2be63ef42a260.jpg"
         },
         {
-            "id":10,
             "title":"test15",
             "description":"my_image1",
             "buttonText":"selfImage1",
@@ -37,3 +36,25 @@ for the details of the api, I presume that the front end will send a list of Sli
     ]
 }
 ```
+then if we want to update that those two SliderItems, we can first call the /carousel/list to check the id of this slider, then use that slider and the data which contains the updated information with this json
+```json
+{
+    "data":[
+        {
+            "id":9,
+            "title":"test15",
+            "description":"my_image8",
+            "buttonText":"selfImage8",
+            "component":"testcomponent8",
+            "link":"https://mxshop-files-mokcoo.oss-cn-beijing.aliyuncs.com/c35a0ddb3d3b6bb80f2be63ef42a260.jpg"
+        },
+        {
+            "id":10,
+            "title":"test15",
+            "description":"my_image1",
+            "buttonText":"selfImage1",
+            "component":"testcomponent1",
+            "link":"https://mxshop-files-mokcoo.oss-cn-beijing.aliyuncs.com/c35a0ddb3d3b6bb80f2be63ef42a260.jpg"
+        }
+    ]
+}
