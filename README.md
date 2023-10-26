@@ -12,7 +12,25 @@ model folder: orm structure for the table<br/>
 services folder: service function for api<br/>
 setting folder: establishing connection to databse<br/><br/>
 if you want to run the project, first change the setting file's database's connection to your local database, then create a database called carousel.<br/>
-then use the cli:<br/><br/>
+then use the cli:<br/>
 uvicorn main:app<br/><br/>
 
-for the details of the api: I presume that the front end will send a list of SliderItem, which contains all the information and the links. So
+for the details of the api, I presume that the front end will send a list of SliderItem, which contains all the information and the links. So if this json is sent from the frontend, I will create the information in the four tables{
+    "data":[
+        {
+            "title":"test15",
+            "description":"my_image8",
+            "buttonText":"selfImage8",
+            "component":"testcomponent8",
+            "link":"https://mxshop-files-mokcoo.oss-cn-beijing.aliyuncs.com/c35a0ddb3d3b6bb80f2be63ef42a260.jpg"
+        },
+        {
+            "id":10,
+            "title":"test15",
+            "description":"my_image1",
+            "buttonText":"selfImage1",
+            "component":"testcomponent1",
+            "link":"https://mxshop-files-mokcoo.oss-cn-beijing.aliyuncs.com/c35a0ddb3d3b6bb80f2be63ef42a260.jpg"
+        }
+    ]
+}
