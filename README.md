@@ -6,13 +6,13 @@ SliderItem contains a foreign key targeting the SliderImage table<br/>
 ![329a4eafdc159f0a7875ae7bb1c2e49](https://github.com/mokcoo/carousel/assets/69970162/fd7f5f97-80f3-4064-b30c-cc82ca93929d)
 
 the backend's framework contains:<br/><br/>
-api folder: api for backend<br/><br/>
-form folder: inputing data's format<br/><br/>
-model folder: orm structure for the table<br/><br/>
-services folder: service function for api<br/><br/>
+api folder: api for backend<br/>
+form folder: inputing data's format<br/>
+model folder: orm structure for the table<br/>
+services folder: service function for api<br/>
 setting folder: establishing connection to databse<br/><br/>
-if you want to run the project, first change the setting file's database's connection to your local database, then create a database called carousel.<br/><br/>
-use the cli:<br/><br/>
+if you want to run the project, first change the setting file's database's connection to your local database, then create a database called carousel.<br/>
+then use the cli:<br/><br/>
 uvicorn main:app<br/><br/>
 
 for the details of the api: I presume that the front end will send a list of SliderItem, which contains all the information and the links. So
