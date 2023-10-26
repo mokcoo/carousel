@@ -1,11 +1,13 @@
 
 import { useEffect, useState } from 'react'
 import { getSlider } from './utils/fetchSlider'
+import Carousel from './component/carousel'
 
 
 
 function App() {
-  const [slider,setSlider] = useState('')
+  const [slider,setSlider] = useState({ message: [] })
+  
   useEffect(()=>{
     const response = async () =>{
       try{
@@ -18,12 +20,16 @@ function App() {
     response()
     
   },[])
-  for(let i = 0;i<slider.message.length;i++){
-    console.log(slider.message[i])
-  }
+  // console.log(slider.message)
+  const list = slider.message.map((item) =>
+    item.data.map(dataItem => 
+      // <img key={dataItem.id} src={dataItem.backgroundImage.link}></img>
+      <Carousel key={dataItem.id} images={dataItem.backgroundImage} ></Carousel>
+    )
+  );
   return (
     <div>
-      {/* <div>{slider}</div> */}
+      <div>{list}</div>
       <p>aaa</p>
       
 
