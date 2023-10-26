@@ -5,7 +5,7 @@ SliderData is the junction table for Slider and SliderItem which contains two fo
 SliderItem contains a foreign key targeting the SliderImage table<br/>
 ![329a4eafdc159f0a7875ae7bb1c2e49](https://github.com/mokcoo/carousel/assets/69970162/fd7f5f97-80f3-4064-b30c-cc82ca93929d)
 
-the backend's framework contains:<br/><br/>
+the backend's framework contains:<br/>
 api folder: api for backend<br/>
 form folder: inputing data's format<br/>
 model folder: orm structure for the table<br/>
