@@ -15,3 +15,4 @@ if you want to run the project, first change the setting file's database's conne
 use the cli:<br/><br/>
 uvicorn main:app<br/><br/>
 
+for the details of the api: I presume that the front end will send a list of SliderItem, which contains all the information and the links. So
