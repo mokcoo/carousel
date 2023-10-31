@@ -7,7 +7,8 @@ import Carousel from './component/carousel'
 
 function App() {
   const [slider,setSlider] = useState({ message: [] })
-  
+  const [images,setImages] = useState([])
+  const [sliderID,setSliderID] = useState(1)
   useEffect(()=>{
     const response = async () =>{
       try{
@@ -20,16 +21,19 @@ function App() {
     response()
     
   },[])
-  // console.log(slider.message)
-  const list = slider.message.map((item) =>
-    item.data.map(dataItem => 
-      // <img key={dataItem.id} src={dataItem.backgroundImage.link}></img>
-      <Carousel key={dataItem.id} images={dataItem.backgroundImage} ></Carousel>
-    )
-  );
+  console.log(slider.message)
+  // const list = slider.message.map((item) =>
+  //     {
+  //       item.map(data => {
+  //         setImages([...images,data.backgroundImage.link])
+  //     })
+  //   }
+  // );
+  console.log(images)
   return (
     <div>
-      <div>{list}</div>
+      {/* <div>{list}</div> */}
+      <Carousel slider={slider} sliderID={sliderID}></Carousel>
       <p>aaa</p>
       
 
