@@ -19,7 +19,7 @@ export default function UpdateSlider() {
     const jsonData = JSON.stringify(payload)
     updateSliderById(sliderId,jsonData)
     //console.log('JSON Data:', JSON.stringify(payload));
-    // Send payload to backend or other logic here...
+    
   };
 
   const handleAddFields = () => {
