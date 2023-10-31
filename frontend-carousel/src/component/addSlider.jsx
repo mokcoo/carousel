@@ -17,7 +17,7 @@ export default function AddSlider() {
     const payload = { data };
     addNewSlider(JSON.stringify(payload))
     //console.log('JSON Data:', JSON.stringify(payload));
-    // Send payload to backend or other logic here...
+    
   };
 
   const handleAddFields = () => {
