@@ -1,7 +1,7 @@
 import { addSliderUrl } from "../config/url";
 
 export async function addNewSlider(data){
-    console.log(data)
+    //console.log(data)
     try{
         const res = await fetch(`${addSliderUrl}`,{
             method:'POST',

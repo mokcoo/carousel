@@ -21,6 +21,7 @@ app.add_middleware(
 @app.post("/carousel/add")
 async def create_carousel(carousel: SliderForm):
     # create a carousel servicer instance
+    print(carousel)
     new_carousel = CarouselServicer()
 
     # retrieve the id
