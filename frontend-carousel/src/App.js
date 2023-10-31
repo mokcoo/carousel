@@ -9,7 +9,7 @@ import Crud from './pages/crud'
 function App() {
   const [slider,setSlider] = useState({ message: [] })
   const [images,setImages] = useState([])
-  const [sliderID,setSliderID] = useState(7)
+  const [sliderID,setSliderID] = useState(3)
   useEffect(()=>{
     const response = async () =>{
       try{

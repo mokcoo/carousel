@@ -3,6 +3,7 @@ import SliderList from '../component/sliderList'
 import { ADDSLIDER,UPDATESLIDER,DELETESLIDER,GETSLIDER } from '../global/status'
 import DeleteSlider from '../component/deleteSlider'
 import AddSlider from '../component/addSlider'
+import UpdateSlider from '../component/updateSlider'
 export default function Crud({slider}) {
   const [status,setStatus] = useState(GETSLIDER)
   return (
@@ -16,6 +17,8 @@ export default function Crud({slider}) {
       {status === GETSLIDER && <SliderList slider={slider}></SliderList>}
       {status === DELETESLIDER && <DeleteSlider></DeleteSlider>}
       {status === ADDSLIDER && <AddSlider></AddSlider>}
+      {status === UPDATESLIDER && <UpdateSlider></UpdateSlider>}
+
     </div>
     
     

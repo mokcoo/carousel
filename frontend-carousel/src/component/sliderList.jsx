@@ -6,7 +6,7 @@ export default function SliderList({slider}) {
             console.log(data.backgroundImage.link);
 
             return(
-                <div key={data.backgroundImage.id}>{data.backgroundImage.link}</div>
+                <div key={data.backgroundImage.id}>id: {data.backgroundImage.id} {data.backgroundImage.link}</div>
             )
             
         })
