@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { getSlider } from './utils/fetchSlider'
 import Carousel from './component/carousel'
+import Crud from './pages/crud'
 
 
 
@@ -34,7 +35,7 @@ function App() {
     <div>
       {/* <div>{list}</div> */}
       <Carousel slider={slider} sliderID={sliderID}></Carousel>
-      <p>aaa</p>
+      <Crud slider={slider}></Crud>
       
 
     </div>

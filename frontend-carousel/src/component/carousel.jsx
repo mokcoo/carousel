@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import findImageById from '../utils/findImageById'
 
 export default function Carousel({slider,sliderID}) {
     const [index,setIndex] = useState(0)
     const [images,setImages] = useState([])
     
     useEffect(()=>{
-      const newSlider = slider.message.find(m =>m.id===sliderID)
-      if(newSlider){
-        const links = newSlider.data.map(val => val.backgroundImage.link);
-        setImages(links);
-      }
+      const link = findImageById(slider,sliderID)
+      setImages(link);
+      
     },[slider, sliderID])
     
     function nextImage() {
